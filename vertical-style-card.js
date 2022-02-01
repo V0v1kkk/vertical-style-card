@@ -20,13 +20,18 @@ class VerticalStyleCard extends HTMLElement {
 		if (cardConfig.style.border === undefined || cardConfig.style.border == null ) cardConfig.style.border = true;
 		if (!cardConfig.style.background_color || cardConfig.style.background_color == null ) cardConfig.style.background_color = 'var(--paper-card-background-color)';
 		if (!cardConfig.style.font_size || cardConfig.style.font_size == null ) cardConfig.style.font_size = 'var(--paper-font-headline_-_font-size)';
+        if (!cardConfig.style.borderRadius || cardConfig.style.borderRadius == null ) cardConfig.style.borderRadius = '20px';
+        if (!cardConfig.style.firstShadowAlpha || cardConfig.style.firstShadowAlpha == null ) cardConfig.style.firstShadowAlpha = '0.14';
+        if (!cardConfig.style.secondShadowAlpha || cardConfig.style.secondShadowAlpha == null ) cardConfig.style.secondShadowAlpha = '0.12';
+        if (!cardConfig.style.thirdShadowAlpha || cardConfig.style.thirdShadowAlpha == null ) cardConfig.style.thirdShadowAlpha = '0.15';
+        if (!cardConfig.style.padding || cardConfig.style.padding == null ) cardConfig.style.padding = '5px';
 
 		this.style.background = cardConfig.style.background_color;
-		this.style.padding = '5px 5px 5px 5px';
+		this.style.padding = '${cardConfig.style.padding} ${cardConfig.style.padding} ${cardConfig.style.padding} ${cardConfig.style.padding}';
 
 		if (cardConfig.style.border == true){
-			this.style.boxShadow = "0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.15)";
-			this.style.borderRadius = "2px";
+			this.style.boxShadow = '0 2px 2px 0 rgba(0, 0, 0, ${firstShadowAlpha}), 0 1px 5px 0 rgba(0, 0, 0, ${secondShadowAlpha}), 0 3px 1px -2px rgba(0, 0, 0, ${thirdShadowAlpha})';
+			this.style.borderRadius = cardConfig.style.borderRadius;
 		}
 
         const root = this.shadowRoot;
@@ -49,7 +54,8 @@ class VerticalStyleCard extends HTMLElement {
             } else {
                 element = document.createElement(`hui-${item.type}-card`);
             }
-            element.setConfig(item);
+            if (element.setConfig != undefined)
+                element.setConfig(item);
             root.appendChild(element);
             this._refCards.push(element);
         });
