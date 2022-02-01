@@ -1,3 +1,7 @@
+# 0.1.3
+
+Styles fix.
+
 ## 0.1.2
 
 * An "element.setConfig is not a function" error has been fixed.
