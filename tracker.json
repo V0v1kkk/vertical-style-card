@@ -1,7 +1,7 @@
 {
     "vertical-style-card": {
       "updated_at": "2022-02-01",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "remote_location": "https://raw.githubusercontent.com/matisaul/vertical-style-card/master/vertical-style-card.js",
       "visit_repo": "https://github.com/matisaul/vertical-style-card",
       "changelog": "https://github.com/matisaul/vertical-style-card/releases/latest"

@@ -30,7 +30,7 @@ class VerticalStyleCard extends HTMLElement {
 		this.style.padding = cardConfig.style.padding + ' ' + cardConfig.style.padding + ' ' + cardConfig.style.padding + ' ' + cardConfig.style.padding;
 
 		if (cardConfig.style.border == true){
-			this.style.boxShadow = '0 2px 2px 0 rgba(0, 0, 0, ' + firstShadowAlpha + '), 0 1px 5px 0 rgba(0, 0, 0, ' + secondShadowAlpha + '), 0 3px 1px -2px rgba(0, 0, 0, ' + thirdShadowAlpha + ')';
+			this.style.boxShadow = '0 2px 2px 0 rgba(0, 0, 0, ' + cardConfig.style.firstShadowAlpha + '), 0 1px 5px 0 rgba(0, 0, 0, ' + cardConfig.style.secondShadowAlpha + '), 0 3px 1px -2px rgba(0, 0, 0, ' + cardConfig.style.thirdShadowAlpha + ')';
 			this.style.borderRadius = cardConfig.style.borderRadius;
 		}
 
